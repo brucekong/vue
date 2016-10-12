@@ -6,9 +6,8 @@
 <script>
 
 	export default {
-		props:{
-			id:'',
-			status:''
-		}
+		props:[
+		  "content","id","status"
+		]
 	}
 </script>

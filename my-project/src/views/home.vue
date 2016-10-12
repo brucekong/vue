@@ -3,25 +3,18 @@
   </header-tab>
   <div class="content">
     <tab-wrap>
-      <tab v-for="tab in tabs" v-bind:label="tab.label" v-bind:status="tab.status" v-bind:path="tab.path"></tab>
+      <tab v-for="tab in tabs" v-bind:label="tab.label" v-bind:status="tab.status" v-bind:path="tab.path" @click="setStatus($index)"></tab>
     </tab-wrap>
     <!--<div class="buttons-tab">
       <a href="#tab1" class="tab-link active button">动态</a>
-      <a href="#tab2" class="tab-link button">前端</a>
+      <alink acttab2" class="tab-link button">前端</a>
     </div>-->
     <div class="content-block">
-      <div class="tabs">
-        <div id="tab1" class="tab active">
-          <div class="content-block">
-            <p>This is tab 1 content</p>
-          </div>
-        </div>
-        <div id="tab2" class="tab">
-          <div class="content-block">
-            <p>This is tab 2 content</p>
-          </div>
-        </div>
-      </div>
+      <tab-con id="tab1" v-show="tabShow" status="active" >
+        This is content1
+      </tab-con>
+      <tab-con id="tab2" v-show="!tabShow">This is content2</tab-con>
+      <tab-con id="tab2" v-show="!tabShow">This is content2</tab-con>
     </div>
   </div>
 </template>
@@ -29,7 +22,8 @@
 <script>
   import HeaderTab from '../components/HeaderTab.vue';
   import TabWrap from '../components/TabWrap.vue';
-  import Tab from '../components/Tab.vue'
+  import Tab from '../components/Tab.vue';
+  import TabCon from '../components/TabCon.vue'
   export default {
     data () {
       return {
@@ -40,14 +34,30 @@
             status:"active"
           },
           {
-            label:"前端",
-            path:"#tab2"
+            label:"前端1",
+            path:"#tab2",
+            status:""
+          },
+          {
+            label:"前端2",
+            path:"#tab2",
+            status:""
           }
-        ]
+        ],
+        tabShow:true
+      }
+    },
+    methods:{
+      setStatus($index){
+        this.tabs.map(function (v,i) {
+          i==$index? v.status="active": v.status="";
+        });
+        this.tabShow = !this.tabShow;
+
       }
     },
     components:{
-      HeaderTab,TabWrap,Tab
+      HeaderTab,TabWrap,Tab,TabCon
     }
   }
 </script>
