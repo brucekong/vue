@@ -1,5 +1,5 @@
 <template>
-	<div v-bind:id="id" class="tab" v-bind:class="status">
+	<div  class="tab" v-bind:class="status">
          <slot></slot>
    	</div>
 </template>
@@ -7,7 +7,7 @@
 
 	export default {
 		props:[
-		  "content","id","status"
+		  "content","status"
 		]
 	}
 </script>

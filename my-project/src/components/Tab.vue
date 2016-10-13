@@ -1,10 +1,9 @@
 <template>
-  <a :href="path"  class="tab-link button" v-bind:class="status" v-text="label" ></a>
+  <a href="javascript:void(0)"  class="tab-link button" v-bind:class="status" v-text="label" ></a>
 </template>
 <script>
   export default{
     props:{
-      path:"",
       index:"",
       label:"",
       status:""
