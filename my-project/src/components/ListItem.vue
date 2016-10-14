@@ -1,4 +1,13 @@
 <template>
-  <a href="">1231231321</a>
-
+  <p>
+    <a href="">{{name}} {{pingyin}}</a>
+  </p>
 </template>
+<script>
+  export default{
+    props:{
+      "name":"",
+      "pingyin":""
+    }
+  }
+</script>

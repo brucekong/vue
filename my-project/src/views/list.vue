@@ -1,19 +1,43 @@
 <template>
-  <list></list>
+  <div id="list">
+  <list-wrap>
+    <list-item v-for="list in lists" v-bind:name="list.name" v-bind:pingyin="list.firstPinyin"></list-item>
+  </list-wrap>
+  </div>
 </template>
 <script>
-  import List from '../components/ListItem.vue'
+  import ListWrap from '../components/ListWrap.vue'
+  import ListItem from '../components/ListItem.vue'
   import $ from 'n-zepto';
-  console.log($);
   export default{
     ready(){
-      this.$http("http://baidu.com");
+      this.showList();
+    },
+    data(){
+      return{
+        lists:[]
+      }
+    },
+    methods:{
+       showList(){
+         const _self=this;
+         $.ajax({
+           type:"GET",
+           url:"http://wap.autostreets.com/noHaggle/getParamsForList",
+           dataType: "jsonp",
+           jsonp: "jsoncallback",
+           success:function(data){
+             _self.lists=data.data.brandList;
+             console.log(_self.lists);
+           }
+         });
+       },
+      scrollLoading(){
+
+      }
+    },
+    components:{
+      ListWrap,ListItem
     }
   }
-  $.ajax({
-    url:"",
-    success:function(data){
-      console.log(data);
-    }
-  });
 </script>
