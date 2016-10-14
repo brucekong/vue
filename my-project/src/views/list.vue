@@ -7,7 +7,7 @@
   console.log($);
   export default{
     ready(){
-      this.$http.
+      this.$http("http://baidu.com");
     }
   }
   $.ajax({
