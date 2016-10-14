@@ -1,14 +1,14 @@
 import Vue from 'vue'
-// import VueRouter from 'vue-router'
-// import routerConfig from './router'
+import VueRouter from 'vue-router'
+import routerConfig from './router'
 import App from './App'
 
+// new Vue({
+//   el: 'body',
+//   components: { app }
+// })
 
-new Vue({
-  el: '#app',
-  components: {App}
-})
-/*Vue.use(VueRouter);
+Vue.use(VueRouter);
 
 //配置路由
 const router = new VueRouter({
@@ -20,4 +20,4 @@ const router = new VueRouter({
 routerConfig(router);
 
 router.start(App,'#app');
-window.router = router*/
+window.router = router
