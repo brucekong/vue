@@ -13,10 +13,9 @@ export default function (router){
         require(['./views/home.vue'],resolve);
       }
     },
-
-    '/search': {
+    '/list': {
       component (resolve) {
-        require(['./views/search.vue'],resolve);
+        require(['./views/list.vue'],resolve);
       }
     },
     '/me': {

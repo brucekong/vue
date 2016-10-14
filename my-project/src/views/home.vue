@@ -1,6 +1,10 @@
 <template>
-
-
+<header-tab></header-tab>
+  <div class="content">
+  <tab-wrap>
+    <tab v-for="tab in tabs" v-bind:label="tab.label"></tab>
+  </tab-wrap>
+  </div>
 </template>
 
 <script>
