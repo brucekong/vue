@@ -1,27 +1,42 @@
 <template>
   <div id="list">
   <list-wrap>
-    <list-item v-for="list in lists" v-bind:name="list.name" v-bind:pingyin="list.firstPinyin"></list-item>
+    <list-item v-for="list in lists | orderBy 'name'" v-bind:name="list.name" v-bind:pingyin="list.firstPinyin"></list-item>
   </list-wrap>
   </div>
 </template>
 <script>
   import ListWrap from '../components/ListWrap.vue'
   import ListItem from '../components/ListItem.vue'
-  import $ from 'n-zepto';
+  import Vue from 'vue'
+  import VueResource from 'vue-resource'
+//  import $ from 'n-zepto';
+  Vue.use(VueResource);
   export default{
     ready(){
+      const _self=this;
+      let WH=document.documentElement.clientHeight;
+//      console.log(WH);
       this.showList();
+      document.addEventListener("scroll",function () {
+        const scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+        const scrollHeight=document.documentElement.scrollHeight||document.body.scrollHeight;
+
+        (scrollTop+WH+100>scrollHeight && _self.loadFlag)?(_self.showList(),_self.loadFlag=false):null;
+
+//        console.log(scrollTop);
+      })
     },
     data(){
       return{
-        lists:[]
+        lists:[],
+        loadFlag:true
       }
     },
     methods:{
        showList(){
          const _self=this;
-         $.ajax({
+         /*$.ajax({
            type:"GET",
            url:"http://wap.autostreets.com/noHaggle/getParamsForList",
            dataType: "jsonp",
@@ -30,6 +45,11 @@
              _self.lists=data.data.brandList;
              console.log(_self.lists);
            }
+         });*/
+        this.$http.jsonp('http://wap.autostreets.com/noHaggle/getParamsForList',{jsonp: 'jsoncallback'}).then(function (data) {
+           this.loadFlag=true;
+          this.lists= this.lists.concat(data.data.data.brandList);
+           console.log(this.lists);
          });
        },
       scrollLoading(){
