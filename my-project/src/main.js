@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routerConfig from './router'
 import App from './App'
-
+import VueResource from 'vue-resource'
+Vue.use(VueResource);
 // new Vue({
 //   el: 'body',
 //   components: { app }

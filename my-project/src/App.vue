@@ -13,6 +13,7 @@
   import Hello from './components/Hello.vue';
   import Child from './components/Child.vue';
 
+
   export default {
     data(){
       return{
@@ -25,6 +26,11 @@
           {
             path:"/list",
             label:"列表",
+            icon:"search"
+          },
+          {
+            path:"/qa",
+            label:"问答",
             icon:"search"
           }
 
@@ -41,5 +47,6 @@
   }
 </script>
 <style>
+
   @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 </style>

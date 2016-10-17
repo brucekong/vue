@@ -18,6 +18,11 @@ export default function (router){
         require(['./views/list.vue'],resolve);
       }
     },
+    '/qa': {
+      component (resolve) {
+        require(['./views/qa.vue'],resolve);
+      }
+    },
     '/me': {
       component (resolve) {
         require(['./views/me.vue'],resolve);
