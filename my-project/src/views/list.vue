@@ -1,8 +1,10 @@
 <template>
   <div id="list">
   <list-wrap>
+    <list-item v-for="list in lists2" v-bind:name="list.name" v-bind:age="list.age"></list-item>
     <list-item v-for="list in lists | orderBy 'name'" v-bind:name="list.name" v-bind:pingyin="list.firstPinyin"></list-item>
   </list-wrap>
+
   </div>
 </template>
 <script>
@@ -26,10 +28,25 @@
 
 //        console.log(scrollTop);
       })
+
+    },
+    created(){
+//      console.log(this.$data);
+
     },
     data(){
       return{
         lists:[],
+        lists2:[
+          {
+            name:'a',
+            age:'12'
+          },
+          {
+            name:'b',
+            age:'24'
+          }
+        ],
         loadFlag:true
       }
     },
@@ -61,3 +78,4 @@
     }
   }
 </script>
+

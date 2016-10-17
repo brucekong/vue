@@ -1,13 +1,17 @@
 <template>
-  <p>
-    <a href="">{{name}} {{pingyin}}</a>
-  </p>
+  <li>
+    <a href="" class="list-item">{{name}} {{pingyin}} {{age}} </a>
+  </li>
 </template>
 <script>
   export default{
     props:{
       "name":"",
-      "pingyin":""
+      "pingyin":"",
+      "age":""
     }
   }
 </script>
+<style>
+
+</style>

@@ -1,5 +1,7 @@
 <template>
   <div class="list-wrap">
-    <slot></slot>
+    <ul>
+      <slot></slot>
+    </ul>
   </div>
 </template>

@@ -1,8 +1,7 @@
 <template>
-  <a class="tab-item external" v-link="{path:path,activeClass:'active',replace:true}">
-    <span class="icon" :class="iconClass"></span>
-    <span class="tab-label" v-text="label"></span>
-  </a>
+  <li class="tab-item external btn-" role="presentation" v-link="{path:path,activeClass:'active',replace:true}">
+    <a href="javascript:void(0)" v-text="label"></a>
+  </li>
 </template>
 <script>
   export default{

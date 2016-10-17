@@ -1,7 +1,7 @@
 <template>
-  <nav class="bar bar-tab">
+  <ul class="nav nav-tabs navbar-default navbar-fixed-bottom" role="tablist">
      <slot></slot>
-  </nav>
+  </ul>
 </template>
 <style>
 
