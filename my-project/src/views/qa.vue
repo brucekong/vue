@@ -1,6 +1,8 @@
 <template>
+  <div class="page-header"><h2 class="qa-hd">{{idx+1}}</h2></div>
   <div class="btn-wrap navbar-fixed-bottom">
-    <a href="javascript:void(0)" v-show="idx" class="btn prev-btn btn-primary btn-lg" @click="prev">上一题</a>
+
+    <a href="javascript:void(0)" v-show="idx" class="btn prev-btn btn-primary btn-lg" @click="prev">上一题 </a>
     <a href="javascript:void(0)" v-show="idx!=questionsLength-1" class="btn next-btn btn-success btn-lg" @click="next">下一题</a>
   </div>
 </template>
@@ -34,6 +36,9 @@
         this.idx++;
         console.log(this.idx);
         this.question=this.response[this.idx];
+      },
+      prefix(num,val){
+        return new Array(num).join(0)
       }
     }
   }
@@ -47,4 +52,5 @@
     flex:1;
     margin: 10px;
   }
+  .qa-hd{ text-align: center;}
 </style>
