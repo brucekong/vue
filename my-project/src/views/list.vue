@@ -1,8 +1,7 @@
 <template>
   <div id="list">
   <list-wrap>
-    <list-item v-for="list in lists2" v-bind:name="list.name" v-bind:age="list.age"></list-item>
-    <list-item v-for="list in lists | orderBy 'name'" v-bind:name="list.name" v-bind:pingyin="list.firstPinyin"></list-item>
+    <list-item v-for="list in lists | orderBy 'name'" v-bind:name="list.name" v-bind:pingyin="list.firstPinyin" ></list-item>
   </list-wrap>
 
   </div>
@@ -10,10 +9,10 @@
 <script>
   import ListWrap from '../components/ListWrap.vue'
   import ListItem from '../components/ListItem.vue'
-  import Vue from 'vue'
-  import VueResource from 'vue-resource'
+//  import Vue from 'vue'
+//  import VueResource from 'vue-resource'
 //  import $ from 'n-zepto';
-  Vue.use(VueResource);
+//  Vue.use(VueResource);
   export default{
     ready(){
       const _self=this;

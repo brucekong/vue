@@ -8,11 +8,11 @@
 </template>
 
 <script>
+  import flexable from 'assets/js/lib/flexible';
   import Bar from './components/Bar';
   import BarItem from './components/BarItem';
   import Hello from './components/Hello.vue';
   import Child from './components/Child.vue';
-
 
   export default {
     data(){
@@ -46,7 +46,8 @@
     replace:false
   }
 </script>
-<style>
-
-  @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+<style rel="stylesheet/scss" lang="scss">
+  @import "../src/assets/css/reset.scss";
+  @import "../src/assets/css/scss_common.scss";
+  @import "../src/assets/css/css_common.scss";
 </style>
