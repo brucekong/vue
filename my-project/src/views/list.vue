@@ -1,16 +1,16 @@
 <template>
   <div id="list">
-    <list-item v-for="list in lists | orderBy 'name'" v-bind:name="list.name"
-               v-bind:pingyin="list.firstPinyin"></list-item>
+    <!--<list-item v-for="list in lists | orderBy 'name'" v-bind:name="list.name"
+               v-bind:pingyin="list.firstPinyin"></list-item>-->
+    <list-item v-bind:data="lists"></list-item>
+    <Loading v-show="!loadFlag"></Loading>
   </div>
 </template>
 <script>
   //  import ListWrap from '../components/ListWrap.vue'
-  import ListItem from '../components/ListItem.vue'
-  //  import Vue from 'vue'
-  //  import VueResource from 'vue-resource'
+  import ListItem from '../components/ListContent.vue'
+  import Loading from '../components/Loading.vue'
   //  import $ from 'n-zepto';
-  //  Vue.use(VueResource);
   export default{
     ready(){
       const _self = this;
@@ -53,7 +53,6 @@
         this.$http.jsonp('http://wap.autostreets.com/noHaggle/getParamsForList', {jsonp: 'jsoncallback'}).then(function (data) {
           this.loadFlag = true;
           this.lists = this.lists.concat(data.data.data.brandList);
-          console.log(this.lists);
         });
       },
       scrollLoading(){
@@ -61,7 +60,7 @@
       }
     },
     components: {
-      ListItem
+      ListItem,Loading
     }
   }
 </script>

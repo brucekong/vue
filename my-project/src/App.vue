@@ -15,6 +15,7 @@
   import flexable from 'assets/js/lib/flexible';
   import Bar from './components/Bar';
   import BarItem from './components/BarItem';
+
 //  import Hello from './components/Hello.vue';
 //  import Child from './components/Child.vue';
 
@@ -42,8 +43,7 @@
       }
     },
     components: {
-      Bar,
-      BarItem
+      Bar, BarItem
 //      Hello
 //      Child
     },
