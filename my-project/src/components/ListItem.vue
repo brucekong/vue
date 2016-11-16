@@ -1,7 +1,11 @@
 <template>
-  <li>
-    <a href="javascript:void(0)" class="list-item" @click="go">{{name}} {{pingyin}} {{age}} </a>
-  </li>
+  <div class="list-wrap">
+    <ul>
+      <li>
+        <a href="javascript:void(0)" class="list-item" @click="go">{{name}} {{pingyin}} {{age}} </a>
+      </li>
+    </ul>
+  </div>
 </template>
 <style rel="stylesheet/scss" lang="scss">
   @import "../../src/assets/css/scss_common.scss";
@@ -27,6 +31,4 @@
     }
   }
 </script>
-<style>
 
-</style>

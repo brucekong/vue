@@ -6,13 +6,17 @@
   <!--<child></child>-->
   <router-view></router-view>
 </template>
-
+<style rel="stylesheet/scss" lang="scss">
+  @import "../src/assets/css/reset.scss";
+  @import "../src/assets/css/scss_common.scss";
+  @import "../src/assets/css/css_common.scss";
+</style>
 <script>
   import flexable from 'assets/js/lib/flexible';
   import Bar from './components/Bar';
   import BarItem from './components/BarItem';
-  import Hello from './components/Hello.vue';
-  import Child from './components/Child.vue';
+//  import Hello from './components/Hello.vue';
+//  import Child from './components/Child.vue';
 
   export default {
     data(){
@@ -39,15 +43,11 @@
     },
     components: {
       Bar,
-      BarItem,
-      Hello,
-      Child
+      BarItem
+//      Hello
+//      Child
     },
     replace:false
   }
 </script>
-<style rel="stylesheet/scss" lang="scss">
-  @import "../src/assets/css/reset.scss";
-  @import "../src/assets/css/scss_common.scss";
-  @import "../src/assets/css/css_common.scss";
-</style>
+
