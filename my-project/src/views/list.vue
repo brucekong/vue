@@ -9,7 +9,6 @@
 <script>
   //  import ListWrap from '../components/ListWrap.vue'
   import ListItem from '../components/ListContent.vue'
-  import Loading from '../components/Loading.vue'
   //  import $ from 'n-zepto';
   export default{
     ready(){
@@ -60,7 +59,7 @@
       }
     },
     components: {
-      ListItem,Loading
+      ListItem
     }
   }
 </script>

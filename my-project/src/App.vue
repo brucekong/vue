@@ -18,7 +18,6 @@
 
 //  import Hello from './components/Hello.vue';
 //  import Child from './components/Child.vue';
-
   export default {
     data(){
       return{
